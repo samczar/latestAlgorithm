@@ -1,8 +1,9 @@
-const splitWord = words => {
+const splitWord = (words) => {
 	var currentWord = ['']
 	for (let index = 0; index < words.length; index++) {
 		if (words[index] !== ' ') {
 			currentWord[currentWord.length - 1] += words[index]
+			console.log(currentWord[currentWord.length - 1])
 		} else if (currentWord[currentWord.length - 1]) {
 			currentWord.push('')
 		}
@@ -18,7 +19,7 @@ const WORD = 'this is a string of words' // great am i
 
 splitWord(WORD)
 
-const reversString = str => {
+const reversString = (str) => {
 	var words = [' ']
 	for (let i = 0; i < str.length; i++) {
 		if (str[i] !== ' ') {

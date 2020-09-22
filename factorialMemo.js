@@ -8,3 +8,18 @@ const factorialMemo = (index, cache) => {
 }
 
 console.log(factorialMemo(5))
+
+const fib = (num, cache) => {
+	cache = cache || []
+
+	if (cache[num]) {
+		return cache[num]
+	}
+
+	if (num < 1) {
+		return 1
+	}
+	return (cache[num] = fib(num - 1, cache) + fib(num - 2, cache))
+}
+
+console.log(fib(500))

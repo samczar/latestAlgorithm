@@ -12,73 +12,73 @@
 
 arrayValue = [3, 4, 9, 6, 1]
 
-const checker = arry => {
-	const arrayLength = arry.length
-	let counter = 0
-	const newArray = []
-	for (let i = 0; i < arrayLength; i++) {
-		console.log(arry[i])
-		for (let j = i.length; j < arrayLength; j++) {
-			console.log(arry[j])
-		}
-	}
-	return newArray
-}
-
-console.log(checker(arrayValue))
-
-// var countSmaller = function(nums) {
-// 	var array = []
-// 	var arr = []
-// 	var length = nums.length
-// 	var index = 0
-// 	for (var i = length - 1; i >= 0; i--) {
-// 		var d = nums[i]
-// 		index = binarySearch(arr, d)
-// 		inserIndex = index
-
-// 		while (arr[inserIndex] === d) {
-// 			inserIndex--
-// 		}
-// 		if (index !== inserIndex) inserIndex++
-// 		arr.splice(index, 0, d)
-// 		array.unshift(inserIndex)
-// 	}
-// 	return array
-// }
-// function binarySearch(arr, val) {
-// 	var high = arr.length - 1
-// 	var mid = 0
-// 	var low = 0
-// 	while (low <= high) {
-// 		mid = Math.floor((low + high) / 2)
-// 		if (arr[mid] === val) {
-// 			return mid
-// 		} else if (arr[mid] > val) {
-// 			high = mid - 1
-// 		} else {
-// 			low = mid + 1
+// const checker = arry => {
+// 	const arrayLength = arry.length
+// 	let counter = 0
+// 	const newArray = []
+// 	for (let i = 0; i < arrayLength; i++) {
+// 		console.log(arry[i])
+// 		for (let j = i.length; j < arrayLength; j++) {
+// 			console.log(arry[j])
 // 		}
 // 	}
-// 	return low
+// 	return newArray
 // }
 
-// console.log(countSmaller(arrayValue))
+// console.log(checker(arrayValue))
 
-const smallArray = arrayNums => {
-	for (let i = 0; i < arrayNums.length; i++) {
-		console.log(arrayNums[i])
-		arrayNums[i] = 0
+var countSmaller = function (nums) {
+	var array = []
+	var arr = []
+	var length = nums.length
+	var index = 0
+	for (var i = length - 1; i >= 0; i--) {
+		var d = nums[i]
+		index = binarySearch(arr, d)
+		inserIndex = index
+
+		while (arr[inserIndex] === d) {
+			inserIndex--
+		}
+		if (index !== inserIndex) inserIndex++
+		arr.splice(index, 0, d)
+		array.unshift(inserIndex)
 	}
-
-	for (let i = 0; i < arrayNums.length; i++) {
-		for (let j = i + 1; j < arrayNums.length; j++) {
-			console.log(arrayNums[j])
-			if (arrayNums[j] < arrayNums[i]) {
-				arrayNums[i]++
-			}
+	return array
+}
+function binarySearch(arr, val) {
+	var high = arr.length - 1
+	var mid = 0
+	var low = 0
+	while (low <= high) {
+		mid = Math.floor((low + high) / 2)
+		if (arr[mid] === val) {
+			return mid
+		} else if (arr[mid] > val) {
+			high = mid - 1
+		} else {
+			low = mid + 1
 		}
 	}
+	return low
 }
 
-smallArray(arrayValue)
+console.log(countSmaller(arrayValue))
+
+// const smallArray = arrayNums => {
+// 	for (let i = 0; i < arrayNums.length; i++) {
+// 		console.log(arrayNums[i])
+// 		arrayNums[i] = 0
+// 	}
+
+// 	for (let i = 0; i < arrayNums.length; i++) {
+// 		for (let j = i + 1; j < arrayNums.length; j++) {
+// 			console.log(arrayNums[j])
+// 			if (arrayNums[j] < arrayNums[i]) {
+// 				arrayNums[i]++
+// 			}
+// 		}
+// 	}
+// }
+
+// smallArray(arrayValue)
